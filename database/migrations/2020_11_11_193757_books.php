@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class Books extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class User extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create ('books', function (Blueprint $table){
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamp('last_logged_in')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-
+            $table->text('title');
+            $table->text('excerpt');
+            $table->CHAR('isbn');
+            $table->integer('pages');
+            $table->double('cost');
+            $table->double('value');
+            $table->dateTime('released');
+            $table->integer('status');
             $table->timestamps();
+
         });
     }
 
@@ -33,6 +35,7 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::fropIfExists('users');
+        Schema::fropIfExists('books');
+
     }
 }
