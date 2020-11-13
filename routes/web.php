@@ -17,4 +17,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 $router->post('/register','UsersController@register');
-
+//gets the books from the BookController's index funtion 
+$router ->get('books','bookController@index');

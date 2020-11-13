@@ -2,19 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-// use Carbon\Carbon;
 
-class UserFactory extends Factory
+
+class AuthorFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Author::class;
 
     /**
      * Define the model's default state.
@@ -25,10 +27,8 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            //
-            'password' => Str::random('password')];
-        }
+            'DOB' => Carbon::now()
+
+        ];
     }
-    
-    // 'email_verified_at' => now(),
+}

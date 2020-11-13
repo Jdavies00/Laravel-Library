@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Symfony\Component\Console\Helper\Table;
 
-class Authors extends Migration
+class Genres extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +14,11 @@ class Authors extends Migration
      */
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('genres',function(Blueprint $table){
             $table->id();
-            $table->string('name');
-            $table->string('DOB');
-            $table->timestamps();
-        }); 
-       }
+            $table->char('label');
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -28,6 +27,6 @@ class Authors extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::fropIfExists('genres');
     }
 }

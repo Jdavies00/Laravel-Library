@@ -14,7 +14,7 @@ class Books extends Migration
     public function up()
     {
         Schema::create ('books', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->id();
             $table->text('title');
             $table->text('excerpt');
             $table->CHAR('isbn');
@@ -38,4 +38,6 @@ class Books extends Migration
         Schema::fropIfExists('books');
 
     }
+  
+
 }

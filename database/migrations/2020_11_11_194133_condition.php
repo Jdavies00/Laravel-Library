@@ -13,7 +13,10 @@ class Condition extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('condition', function (Blueprint $table) {
+            $table->id();
+            $table->char('lable');
+        });
     }
 
     /**
@@ -23,6 +26,7 @@ class Condition extends Migration
      */
     public function down()
     {
-        //
+        Schema::fropIfExists('books');
+
     }
 }
