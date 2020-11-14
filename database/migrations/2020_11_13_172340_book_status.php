@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Geners extends Migration
+class BookStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ class Geners extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('book_status', function (Blueprint $table) {
+            //pk
+            $table->id();
+            $table->integer('in/out');
+            $table->char('updated_at');
+            $table->char('created_at');
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class Geners extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('book_status');
     }
 }

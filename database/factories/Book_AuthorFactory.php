@@ -2,19 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Book_Author;
+use App\Models\Author;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-// use Carbon\Carbon;
 
-class UserFactory extends Factory
+class Book_AuthorFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Book_Author::class;
 
     /**
      * Define the model's default state.
@@ -24,11 +24,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            //
-            'password' => Str::random('password')];
-        }
+            'ref_author_id' => Author::all()->random()->id,
+            'ref_book_id' => Book::all()->random()->id,
+
+        ];
     }
+}
     
     // 'email_verified_at' => now(),

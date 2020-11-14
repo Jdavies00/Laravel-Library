@@ -1,20 +1,16 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Checkout extends Model
+class Genre extends Model
 {
-    //
     use HasFactory;
-    protected $table = 'checkouts';
+    protected $table = 'genre';
     protected $primarayKey = 'id';
     public $incrementing = true;    
-    public $timestamps = true;
+    public $timestamps = false;// for gods sake unless there is atime stapm make this false
 
-    public function book(){
-        return $this->belongsTo ('App\Models\Book','ref_book_id');
-    }
 }
