@@ -15,7 +15,9 @@ class Condition extends Migration
     {
         Schema::create('condition', function (Blueprint $table) {
             $table->id();
-            $table->char('lable');
+            $table->char('score');
+            $table->char('updated_at');
+            $table->char('created_at');
         });
     }
 
@@ -27,6 +29,5 @@ class Condition extends Migration
     public function down()
     {
         Schema::fropIfExists('books');
-
     }
 }

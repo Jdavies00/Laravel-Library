@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Genre;
+use App\Models\Condition;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class GenreFactory extends Factory
+class ConditionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Genre::class;
+    protected $model = Condition::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,8 @@ class GenreFactory extends Factory
     public function definition()
     {
         return [
+            'score' => $this->faker->randomDigitNotNull,
 
-            'label'=>$this->faker->name(),
         ];
     }
 }

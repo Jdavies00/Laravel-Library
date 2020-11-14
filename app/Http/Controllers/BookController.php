@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    //render a list of books
+    //render a list of all books
     public function index(){
         $books = Book::all();
         return $books ->toArray();
@@ -25,10 +25,8 @@ class BookController extends Controller
         $input= $request -> all ();
         $book -> title = $input ['title'];
         $book -> save ();
-        // $books = App\Models\Book::all();
-        // foreach ( $books as $book){
-        //     echo $book->author->name;
-        
+
+       
     } 
 
     public function store (){
@@ -36,8 +34,10 @@ class BookController extends Controller
     }
     
     public function editBook(){
+        // $book= Book::orderBy('id','desc')
 
     }
+    
     public function updateBook(){
 
     }

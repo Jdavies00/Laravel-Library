@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Author;
-use Illuminate\Support\str;
-use Carbon\Carbon;
+
 
 class AuthorSeeder extends Seeder
 {

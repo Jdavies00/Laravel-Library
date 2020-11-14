@@ -16,6 +16,9 @@ class BookStatus extends Migration
         Schema::create('book_status', function (Blueprint $table) {
             //pk
             $table->id();
+            $table->integer('in/out');
+            $table->char('updated_at');
+            $table->char('created_at');
         });
     }
 

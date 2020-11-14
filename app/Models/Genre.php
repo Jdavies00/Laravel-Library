@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +11,6 @@ class Genre extends Model
     protected $table = 'genre';
     protected $primarayKey = 'id';
     public $incrementing = true;    
-    public $timestamps = true;
+    public $timestamps = false;// for gods sake unless there is atime stapm make this false
 
 }
