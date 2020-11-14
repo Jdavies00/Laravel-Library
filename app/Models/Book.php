@@ -18,7 +18,7 @@ class Book extends Model
     
     //book can be checkedout many times/ owns refbookid, id?
     //many books to many status
-    public function checkouts(){
+    public function checkout(){
         return $this ->hasMany('App\Models\Checkout','ref_book_id','id');
         
     }

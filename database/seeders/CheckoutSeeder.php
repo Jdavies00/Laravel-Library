@@ -5,9 +5,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Book_Author;
+use App\Models\Checkout;
 
-class Book_AuthorSeeder extends Seeder
+class CheckoutSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class Book_AuthorSeeder extends Seeder
      */
     public function run()
     {
-        Book_Author::factory()->count(100)->create();
+        Checkout::factory()->count(100)->create();
     }
 }
     
