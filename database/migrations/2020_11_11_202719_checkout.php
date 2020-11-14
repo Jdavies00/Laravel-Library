@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Checkouts extends Migration
+class Checkout extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Checkouts extends Migration
      */
     public function up()
     {
-        schema::create('checkout',function(Blueprint $table){
+        schema::create('checkout', function (Blueprint $table) {
             //pk
             $table->id();
             //fk
@@ -22,20 +22,22 @@ class Checkouts extends Migration
             //other
             $table->datetime('checkout_date');
             $table->datetime('return_date');
-            $table->datetime('due_date');
+            //due_dat need to be fleshed out more
+            // $table->datetime('due_date');
             $table->timestamps();
 
             //fk  from books ref_book_id
             $table->foreign('ref_book_id')
-            ->references('id')
-            ->on('books')
-            ->onDelete('cascade');
+                ->references('id')
+                ->on('books')
+                ->onDelete('cascade');
+
             //fk from user ref_user_id
             $table->foreign('ref_user_id')
-            ->references('id')
-            ->on('users')
-            ->onDelete('cascade');
-    });
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+        });
     }
 
     /**
@@ -46,6 +48,5 @@ class Checkouts extends Migration
     public function down()
     {
         Schema::dropIfExists('authors');
-
     }
 }

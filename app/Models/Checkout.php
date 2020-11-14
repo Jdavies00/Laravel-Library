@@ -9,12 +9,12 @@ class Checkout extends Model
 {
     //
     use HasFactory;
-    protected $table = 'checkouts';
+    protected $table = 'checkout';
     protected $primarayKey = 'id';
     public $incrementing = true;    
     public $timestamps = true;
 
-    public function book(){
-        return $this->belongsTo ('App\Models\Book','ref_book_id');
-    }
+    // public function book(){
+    //     return $this->belongsTo ('App\Models\Book','ref_book_id');
+    // }
 }

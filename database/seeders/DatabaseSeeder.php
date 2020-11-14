@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             ConditionSeeder::class,
             BookStatusSeeder::class,
+            CheckoutSeeder::class,
+            
         ]);
     }
 }

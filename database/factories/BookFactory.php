@@ -24,11 +24,11 @@ class BookFactory extends Factory
     {
         return [
             
-            'title'=>$this->faker->text(),
-            'excerpt'=>$this->faker->text(),
+            'title'=>$this->faker->words($nd=2,$variableNbWords = true),
+            'excerpt'=>$this->faker->catchPhrase(),
             'isbn'=>$this->faker->isbn13,
-            'pages'=>$this->faker->randomDigitNotNull,
-            'cost'=>$this->faker->randomDigitNotNull,
+            'pages'=>$this->faker->numberBetween($min = 0, $max = 9000),
+            'cost'=>$this->faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
             'value'=>$this->faker->randomDigitNotNull,
             'released'=>$this->faker->dateTime(),
             'status'=>$this->faker->randomDigitNotNull
