@@ -19,11 +19,14 @@ class Checkout extends Migration
             //fk
             $table->unsignedBigInteger('ref_book_id');
             $table->unsignedBigInteger('ref_user_id');
+
+
+            $table->unsignedBigInteger('ref_bookstatus_id');
+            $table->unsignedBigInteger('condition_id');
+
             //other
             $table->datetime('checkout_date');
             $table->datetime('return_date');
-            //due_dat need to be fleshed out more
-            // $table->datetime('due_date');
             $table->timestamps();
 
             //fk  from books ref_book_id
@@ -37,6 +40,25 @@ class Checkout extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
+
+
+                // I dont know why but these FK hate me 
+                //I can pull the numbers but making them into FK is not working
+                //prob a name is wrogn somewheer need to return to this later
+            //fk from books
+            // $table->foreign('ref_bookstatus_id')
+            //     ->references('in/out')
+            //     ->on('bookstatus')
+            //     ->onDelete('cascade');
+
+            // //fk to the book condtion
+            // $table->foreign('condtion')
+            //     ->references('id')
+            //     ->on('condition')
+            //     ->onDelete('cascade');
+
+                //FK problem contd in checkout factory 
+
         });
     }
 
@@ -47,6 +69,6 @@ class Checkout extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('checkout');
     }
 }

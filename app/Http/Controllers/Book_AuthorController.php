@@ -44,7 +44,7 @@ class Book_AuthorController extends Controller
      * @param  \App\Book_Author  $book_Author
      * @return \Illuminate\Http\Response
      */
-    public function show(Book_Author $book_Author)
+    public function show(Request $request)
     {
         //
     }
@@ -55,7 +55,7 @@ class Book_AuthorController extends Controller
      * @param  \App\Book_Author  $book_Author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book_Author $book_Author)
+    public function edit(Request $request)
     {
         //
     }
@@ -67,7 +67,7 @@ class Book_AuthorController extends Controller
      * @param  \App\Book_Author  $book_Author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book_Author $book_Author)
+    public function update(Request $request)
     {
         //
     }
@@ -78,7 +78,7 @@ class Book_AuthorController extends Controller
      * @param  \App\Book_Author  $book_Author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book_Author $book_Author)
+    public function destroy(Request $request)
     {
         //
     }

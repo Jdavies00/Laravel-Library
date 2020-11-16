@@ -16,6 +16,9 @@ class Books extends Migration
         Schema::create ('books', function (Blueprint $table){
             $table->id();
             $table->text('title');
+            $table->text('author')->default(null);
+            // ->nullable()
+            // $table->unsignedbigInteger('author_id');
             $table->text('excerpt');
             $table->CHAR('isbn');
             $table->integer('pages');
@@ -24,6 +27,11 @@ class Books extends Migration
             $table->dateTime('released');
             $table->integer('status');
             $table->timestamps();
+
+            // $table->foreign('author_id')
+            // ->references('id')
+            // ->on('authors')
+            // ->onDelete('cascade');
 
         });
     }

@@ -31,4 +31,3 @@ class Book_AuthorFactory extends Factory
     }
 }
     
-    // 'email_verified_at' => now(),
